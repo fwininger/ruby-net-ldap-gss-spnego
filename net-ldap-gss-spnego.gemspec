@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'date'
 
 Gem::Specification.new do |s|
   s.name = 'net-ldap-gss-spnego'
