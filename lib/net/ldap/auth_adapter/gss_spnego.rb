@@ -27,7 +27,7 @@ module Net
             challenge.force_encoding(Encoding::BINARY)
             t2_msg = NTLM::Message.parse(challenge)
             auth_params = { user: user, password: password }
-            auth_params[:domain] = domain unless domain.blank?
+            auth_params[:domain] = domain unless domain.to_s.empty?
             t3_msg = t2_msg.response(auth_params, ntlmv2: true)
             t3_msg.user.force_encoding(Encoding::BINARY)
             t3_msg.serialize
